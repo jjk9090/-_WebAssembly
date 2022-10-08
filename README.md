@@ -164,3 +164,5 @@
       ```
 
     - 用node node.js打开，则在http://localhost:8888/index.html 打开控制台
+    - ![image](https://github.com/jjk9090/-_WebAssembly/blob/master/image.PNG)
+    
