@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>斐波纳切数字</title>
+  </head>
+  <script>
+    function fibonacciJS(n) {
+      if (n < 2) {
+        return 1;
+      }
+      return fibonacciJS(n - 1) + fibonacciJS(n - 2);
+    }
+    const response = fetch("fibonacci.wasm");
+    const num = [5, 15, 25, 35, 45];
+    WebAssembly.instantiateStreaming(response).then(
+      ({ instance }) => {
+        let { fibonacci } = instance.exports;
+        for(let n of num) {
+          console.log(`斐波纳切数字: ${n}，运行 10 次`)
+          let cTime = 0;
+          let jsTime = 0;
+          for(let time = 0; time < 10; time++) {
+            let start = performance.now();
+            fibonacci(n)
+            cTime += (performance.now() - start)
+
+            start = performance.now();
+            fibonacciJS(n)
+            jsTime += (performance.now() - start)
+          }
+          console.log(`wasm 模块平均调用时间：${cTime / 10}ms`)
+          console.log(`js 模块平均调用时间：${jsTime / 10}ms`)
+        }
+
+      }
+    )
+  </script>
+  <body>
+  </body>
+</html>
