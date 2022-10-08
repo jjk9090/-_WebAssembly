@@ -70,6 +70,8 @@
         </body>
         </html>
         ```
+        - 可以从控制台看到：
+        - ![图片2](https://github.com/jjk9090/-_WebAssembly/blob/master/%E6%8D%95%E8%8E%B7-1664953651411.PNG)
 
   - 可选项
 
