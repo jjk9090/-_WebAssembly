@@ -38,6 +38,7 @@
 
         - 用WebAssembly Explorer在线将c程序编写成.wasm文件
         - 在powershell 用live-server --potr=1111打开，在控制台查看得到
+        - ![图片1](https://github.com/jjk9090/-_WebAssembly/blob/master/web.PNG)
 
     - 纯javasript
 
